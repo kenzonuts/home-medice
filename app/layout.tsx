@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
-import { Container } from "@/components/layout/Container";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/constants/site";
+import { COLORS } from "@/constants/design";
 import { inter, manrope } from "@/lib/fonts";
 import "@/styles/globals.css";
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0d9488",
+  themeColor: COLORS.primary,
   width: "device-width",
   initialScale: 1,
 };
@@ -44,10 +44,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${manrope.variable} ${inter.variable}`}>
-      <body className="min-h-dvh font-body antialiased">
-        <Container as="main" className="min-h-dvh py-8">
-          {children}
-        </Container>
+      <body className="min-h-dvh bg-background font-body text-foreground antialiased">
+        {children}
       </body>
     </html>
   );

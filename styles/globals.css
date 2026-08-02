@@ -1,75 +1,183 @@
 @import "tailwindcss";
 
 /* ============================================
-   Design Tokens — foundation only
-   Final brand styling will be applied later.
+   Design System Tokens
+   Rumah Sunat Modern Jati — Modern Healthcare
    ============================================ */
 
 :root {
-  /* Colors */
-  --background: #ffffff;
+  /* Brand colors */
+  --primary: #16a34a;
+  --primary-foreground: #ffffff;
+  --primary-hover: #15803d;
+  --primary-active: #166534;
+
+  --secondary: #0ea5e9;
+  --secondary-foreground: #ffffff;
+  --secondary-hover: #0284c7;
+  --secondary-active: #0369a1;
+
+  --accent: #22c55e;
+  --accent-foreground: #ffffff;
+  --accent-hover: #16a34a;
+  --accent-active: #15803d;
+
+  --background: #f8fafc;
   --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-foreground: #0f172a;
+
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --primary: #0d9488;
-  --primary-foreground: #ffffff;
-  --secondary: #134e4a;
-  --secondary-foreground: #ffffff;
-  --accent: #14b8a6;
-  --accent-foreground: #ffffff;
+
   --border: #e2e8f0;
-  --ring: #0d9488;
+  --border-strong: #cbd5e1;
+  --ring: #16a34a;
+
+  --success: #16a34a;
+  --success-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
   /* Container */
   --container-max: 72rem;
+  --container-narrow: 48rem;
+  --container-wide: 80rem;
   --container-padding: 1rem;
+
+  /* Spacing scale (section / component / card / text) */
+  --space-section-y: 4rem;
+  --space-section-y-md: 6rem;
+  --space-component: 1.5rem;
+  --space-card: 1.5rem;
+  --space-text: 0.75rem;
 }
 
 @theme inline {
-  /* Colors → bg-background, text-primary, etc. */
+  /* ---------- Colors ---------- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-active: var(--secondary-active);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
-  /* Font families → font-heading, font-body, font-sans */
+  --color-white: #ffffff;
+
+  /* ---------- Font families ---------- */
   --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  /* Border radius → rounded-sm, rounded-md, etc. */
+  /* ---------- Font sizes ---------- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* ---------- Font weights ---------- */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ---------- Line heights ---------- */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* ---------- Letter spacing ---------- */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ---------- Border radius ---------- */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
   --radius-full: 9999px;
 
-  /* Shadows → shadow-sm, shadow-md, etc. */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+  --shadow-sm:
+    0 1px 3px 0 rgb(15 23 42 / 0.06), 0 1px 2px -1px rgb(15 23 42 / 0.06);
+  --shadow-md:
+    0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.06);
   --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.06);
   --shadow-xl:
-    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    0 20px 25px -5px rgb(15 23 42 / 0.08), 0 8px 10px -6px rgb(15 23 42 / 0.06);
+  --shadow-card: 0 4px 24px -4px rgb(15 23 42 / 0.08);
+  --shadow-focus: 0 0 0 3px rgb(22 163 74 / 0.35);
 
-  /* Breakpoints */
+  /* ---------- Spacing scale extensions ---------- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+
+  /* ---------- Z-index ---------- */
+  --z-index-dropdown: 50;
+  --z-index-sticky: 100;
+  --z-index-overlay: 200;
+  --z-index-modal: 300;
+  --z-index-toast: 400;
+  --z-index-tooltip: 500;
+
+  /* ---------- Breakpoints ---------- */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
+
+  /* ---------- Transitions ---------- */
+  --default-transition-duration: 200ms;
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 200ms;
+  --transition-duration-slow: 300ms;
+  --transition-duration-slower: 500ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
 }
 
 @layer base {
@@ -83,12 +191,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
   }
 
   h1,
@@ -98,15 +209,36 @@
   h5,
   h6 {
     font-family: var(--font-heading);
+    color: var(--foreground);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--primary) 25%, transparent);
+    color: var(--foreground);
   }
 }
 
 @layer utilities {
+  /* ---------- Container ---------- */
   .container-app {
     margin-inline: auto;
     width: 100%;
     max-width: var(--container-max);
     padding-inline: var(--container-padding);
+  }
+
+  .container-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .container-wide {
+    max-width: var(--container-wide);
   }
 
   @media (min-width: 640px) {
@@ -118,6 +250,63 @@
   @media (min-width: 1024px) {
     .container-app {
       --container-padding: 2rem;
+    }
+
+    :root {
+      --space-section-y: var(--space-section-y-md);
+    }
+  }
+
+  /* ---------- Spacing guidelines ---------- */
+  .section-spacing {
+    padding-block: var(--space-section-y);
+  }
+
+  .section-spacing-sm {
+    padding-block: calc(var(--space-section-y) * 0.65);
+  }
+
+  .section-spacing-lg {
+    padding-block: calc(var(--space-section-y) * 1.25);
+  }
+
+  .component-spacing {
+    gap: var(--space-component);
+  }
+
+  .component-spacing-y > * + * {
+    margin-top: var(--space-component);
+  }
+
+  .card-spacing {
+    padding: var(--space-card);
+  }
+
+  .card-spacing-sm {
+    padding: calc(var(--space-card) * 0.75);
+  }
+
+  .card-spacing-lg {
+    padding: calc(var(--space-card) * 1.25);
+  }
+
+  .text-spacing > * + * {
+    margin-top: var(--space-text);
+  }
+
+  .text-spacing-lg > * + * {
+    margin-top: calc(var(--space-text) * 1.5);
+  }
+
+  /* ---------- Motion preference ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }

@@ -37,17 +37,28 @@ Open [http://localhost:3000](http://localhost:3000).
 ```
 app/                 # App Router routes & layout
 components/
-  ui/                # Primitive UI components
-  layout/            # Layout shells (Container, etc.)
-  sections/          # Page sections
-  shared/            # Shared composite components
+  ui/                # Design system primitives
+  layout/            # Section, Grid, Flex, Stack
+  animations/        # Framer Motion presets
+  sections/          # Page sections (next phases)
+  shared/            # Shared composites (next phases)
 hooks/               # Custom React hooks
 lib/                 # Utilities, fonts, helpers
 types/               # Shared TypeScript types
-constants/           # App constants
+constants/           # Site + design constants
 assets/              # Static assets imported via code
 styles/              # Global CSS & design tokens
 public/              # Public static files
+```
+
+## Design System
+
+Reusable primitives live under `components/ui`, layout helpers under `components/layout`, and motion presets under `components/animations`.
+
+```tsx
+import { Button, Card, SectionTitle } from "@/components/ui";
+import { Section, Grid, Stack } from "@/components/layout";
+import { FadeUp, StaggerContainer } from "@/components/animations";
 ```
 
 ## Path Aliases
@@ -65,4 +76,5 @@ public/              # Public static files
 ## Notes
 
 This repository currently contains the **project foundation only**. Pages and UI sections will be added in later phases.
+
 # home-medice

@@ -14,3 +14,5 @@ export type SeoMeta = {
   description: string;
   image?: string;
 };
+
+export type { PolymorphicProps } from "./ui";
