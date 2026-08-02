@@ -12,3 +12,17 @@ export {
   type StackGap,
   type StackProps,
 } from "./stack";
+
+export { Logo, type LogoProps } from "./Logo";
+export { Navbar, DesktopNav, MobileNav, NavLink, type NavLinkProps } from "./Navbar";
+export {
+  Footer,
+  FooterContact,
+  FooterLinks,
+  FooterSocial,
+  FooterBackToTop,
+} from "./Footer";
+
+export { ScrollTopButton, WhatsAppButton } from "./Floating";
+export { PageLayout, type PageLayoutProps } from "./PageLayout";
+export { SiteShell, type SiteShellProps } from "./SiteShell";

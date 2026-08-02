@@ -5,3 +5,6 @@ export const SITE_DESCRIPTION =
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+/** Short display name for compact logo contexts */
+export const SITE_NAME_SHORT = "RSM Jati" as const;

@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/constants/site";
+import { SiteShell } from "@/components/layout/SiteShell";
 import { COLORS } from "@/constants/design";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/constants/site";
 import { inter, manrope } from "@/lib/fonts";
 import "@/styles/globals.css";
 
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${manrope.variable} ${inter.variable}`}>
       <body className="min-h-dvh bg-background font-body text-foreground antialiased">
-        {children}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
