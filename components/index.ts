@@ -39,3 +39,4 @@ export {
   type SiteShellProps,
 } from "@/components/layout";
 export * from "@/components/animations";
+export * from "@/components/sections";

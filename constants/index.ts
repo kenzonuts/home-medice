@@ -19,3 +19,15 @@ export {
   SITE_NAME_SHORT,
   SITE_URL,
 } from "./site";
+export {
+  heroTrustItems,
+  HOME_ARTICLES,
+  HOME_DOCTORS,
+  HOME_FEATURES,
+  HOME_GALLERY,
+  HOME_LOCATION,
+  HOME_SERVICES,
+  HOME_STATS,
+  HOME_TESTIMONIALS,
+  ratingIcons,
+} from "./homepage";
